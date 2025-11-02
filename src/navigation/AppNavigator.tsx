@@ -6,6 +6,8 @@ import { LandingScreen } from '../pages/landing';
 import { WelcomeScreen } from '../pages/welcome';
 import { RegisterScreen } from '../pages/register';
 import { LoginScreen } from '../pages/login';
+import { AutomationWizardScreen } from '../pages/automationWizard';
+import { AutomationDescriptionScreen } from '../pages/automationDescription';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +22,14 @@ export function AppNavigator() {
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen
+          name="automationWizard"
+          component={AutomationWizardScreen}
+        />
+        <Stack.Screen
+          name="automationDescription"
+          component={AutomationDescriptionScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

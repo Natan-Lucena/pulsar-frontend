@@ -20,13 +20,13 @@ const PURPLE_DARK = '#4F1D7B';
 const PURPLE_BUTTON_DARK = '#6A3297';
 
 type LoginScreenNavigationProp = {
-  navigate: (screen: 'Landing') => void;
+  navigate: (screen: 'automationWizard') => void;
 };
 
 export function LoginScreen() {
   const navigation = useNavigation<LoginScreenNavigationProp>();
   const handleLogin = () => {
-    navigation.navigate('Landing');
+    navigation.navigate('automationWizard');
   };
   const handleForgotPassword = () => console.log('Esqueceu a senha?');
 
