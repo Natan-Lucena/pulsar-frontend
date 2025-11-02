@@ -1,15 +1,23 @@
 import React from 'react';
-import { TextInput, StyleSheet, TextInputProps } from 'react-native';
+import { TextInput, StyleSheet, TextInputProps, ViewStyle } from 'react-native';
 
 const PURPLE_LIGHT = '#D5A7E8';
+const PURPLE_DARK = '#4F1D7B';
 
 interface AppInputProps extends TextInputProps {
   placeholder: string;
+  style?: ViewStyle | ViewStyle[];
 }
 
 export function AppInput(props: AppInputProps) {
+  const { style, ...restProps } = props;
+
   return (
-    <TextInput style={styles.input} placeholderTextColor="#4F1D7B" {...props} />
+    <TextInput
+      style={[styles.input, style]}
+      placeholderTextColor={PURPLE_DARK}
+      {...restProps}
+    />
   );
 }
 
@@ -21,7 +29,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     marginBottom: 20,
     fontSize: 18,
-    color: '#4F1D7B',
+    color: PURPLE_DARK,
     width: '100%',
   },
 });
