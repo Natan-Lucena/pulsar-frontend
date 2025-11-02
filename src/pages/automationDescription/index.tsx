@@ -15,20 +15,28 @@ import { BottomTabBar } from '../../components/bottomTabBar';
 import { AppInput } from '../../components/appInput';
 
 import RobotAsset from '../../../assets/robot-icon.png';
+import { useNavigation } from '@react-navigation/native';
 
 const PURPLE_DARK = '#4F1D7B';
 const PURPLE_MEDIUM = '#8B459B';
 const PADDING_BOTTOM_TAB = 60;
 const TEXTAREA_HEIGHT = 250;
 
+type AutomationDescriptionScreenNavigationProp = {
+  navigate: (screen: 'communicationChannels') => void;
+};
+
 export function AutomationDescriptionScreen() {
-  const navigate = (screen: string) => console.log(`Navegando para: ${screen}`);
+  const navigation = useNavigation<AutomationDescriptionScreenNavigationProp>();
+  const navigate = () => {
+    navigation.navigate('communicationChannels');
+  };
 
   return (
     <View style={styles.container}>
       <NavBar
-        onLogoPress={() => navigate('Home')}
-        onProfilePress={() => navigate('Profile')}
+        onLogoPress={() => navigate()}
+        onProfilePress={() => navigate()}
       />
       <ScrollView
         style={styles.content}
@@ -51,16 +59,16 @@ export function AutomationDescriptionScreen() {
         />
         <TouchableOpacity
           style={styles.nextButton}
-          onPress={() => navigate('AutomationConfirmation')}
+          onPress={() => navigate()}
           activeOpacity={0.8}
         >
           <Text style={styles.nextButtonText}>Próximo</Text>
         </TouchableOpacity>
       </ScrollView>
       <BottomTabBar
-        onHomePress={() => navigate('Home')}
-        onSettingsPress={() => navigate('Settings')}
-        onUsersPress={() => navigate('Users')}
+        onHomePress={() => navigate()}
+        onSettingsPress={() => navigate()}
+        onUsersPress={() => navigate()}
         activeScreen="settings"
       />
     </View>
