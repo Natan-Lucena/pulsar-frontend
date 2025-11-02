@@ -72,7 +72,7 @@ export function AutomationWizardScreen() {
         />
         <TouchableOpacity
           style={styles.nextButton}
-          onPress={() => navigate('automationDescription')}
+          onPress={() => navigate('communicationChannels')}
           activeOpacity={0.8}
         >
           <Text style={styles.nextButtonText}>Próximo</Text>

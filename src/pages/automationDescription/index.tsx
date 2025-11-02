@@ -23,13 +23,13 @@ const PADDING_BOTTOM_TAB = 60;
 const TEXTAREA_HEIGHT = 250;
 
 type AutomationDescriptionScreenNavigationProp = {
-  navigate: (screen: 'communicationChannels') => void;
+  navigate: (screen: 'configuration') => void;
 };
 
 export function AutomationDescriptionScreen() {
   const navigation = useNavigation<AutomationDescriptionScreenNavigationProp>();
   const navigate = () => {
-    navigation.navigate('communicationChannels');
+    navigation.navigate('configuration');
   };
 
   return (

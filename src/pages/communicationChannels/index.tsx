@@ -48,7 +48,7 @@ export function CommunicationChannelsScreen() {
 
   const handleNext = () => {
     console.log('Canais Selecionados:', channels);
-    navigate('configuration');
+    navigate('automationDescription');
   };
 
   return (
