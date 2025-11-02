@@ -15,13 +15,22 @@ import { BottomTabBar } from '../../components/bottomTabBar';
 import { AppCheckbox } from '../../components/appCheckBox';
 
 import RobotAsset from '../../../assets/robot-icon.png';
+import { useNavigation } from '@react-navigation/native';
 
 const PURPLE_DARK = '#4F1D7B';
 const PURPLE_MEDIUM = '#8B459B';
 const PADDING_BOTTOM_TAB = 60;
 
+type CommunicationScreenNavigationProp = {
+  navigate: (screen: string) => void;
+};
+
 export function CommunicationChannelsScreen() {
-  const navigate = (screen: string) => console.log(`Navegando para: ${screen}`);
+  const navigation = useNavigation<CommunicationScreenNavigationProp>();
+
+  const navigate = (screen: string) => {
+    navigation.navigate(screen);
+  };
 
   const [channels, setChannels] = useState({
     discord: false,
@@ -39,7 +48,7 @@ export function CommunicationChannelsScreen() {
 
   const handleNext = () => {
     console.log('Canais Selecionados:', channels);
-    navigate('NextAutomationStep');
+    navigate('configuration');
   };
 
   return (
@@ -81,7 +90,7 @@ export function CommunicationChannelsScreen() {
             onPress={() => toggleCheckbox('whathzapp')}
           />
           <AppCheckbox
-            label="Rapidez"
+            label="Slack"
             checked={channels.slack}
             onPress={() => toggleCheckbox('slack')}
           />

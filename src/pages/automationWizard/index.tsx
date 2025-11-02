@@ -50,10 +50,26 @@ export function AutomationWizardScreen() {
         <Text style={styles.questionTitle}>
           O que você prioriza em sua automatização?
         </Text>
-        <PrioritySlider label="Rapidez" initialValue={0.5} />
-        <PrioritySlider label="Segurança" initialValue={0.5} />
-        <PrioritySlider label="Custo" initialValue={0.5} />
-        <PrioritySlider label="Manutenção" initialValue={0.5} />
+        <PrioritySlider
+          label="Rapidez"
+          secondLabel="Escalabilidade"
+          initialValue={0.5}
+        />
+        <PrioritySlider
+          label="Segurança"
+          secondLabel="Baixo Custo"
+          initialValue={0.5}
+        />
+        <PrioritySlider
+          label="Baixo Custo"
+          secondLabel="Rapidez"
+          initialValue={0.5}
+        />
+        <PrioritySlider
+          label="Manutenção"
+          secondLabel="Transparencia"
+          initialValue={0.5}
+        />
         <TouchableOpacity
           style={styles.nextButton}
           onPress={() => navigate('automationDescription')}

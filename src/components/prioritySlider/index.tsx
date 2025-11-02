@@ -4,6 +4,7 @@ import Slider from '@react-native-community/slider';
 
 interface PrioritySliderProps {
   label: string;
+  secondLabel: string;
   initialValue?: number;
 }
 
@@ -13,6 +14,7 @@ const PURPLE_LIGHT = '#D5A7E8';
 
 export function PrioritySlider({
   label,
+  secondLabel,
   initialValue = 0.5,
 }: PrioritySliderProps) {
   const [value, setValue] = useState(initialValue);
@@ -21,7 +23,7 @@ export function PrioritySlider({
     <View style={sliderStyles.container}>
       <View style={sliderStyles.labelRow}>
         <Text style={sliderStyles.labelText}>{label}</Text>
-        <Text style={sliderStyles.labelText}>{label}</Text>
+        <Text style={sliderStyles.labelText}>{secondLabel}</Text>
       </View>
       <Slider
         style={sliderStyles.slider}
