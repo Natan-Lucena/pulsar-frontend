@@ -9,7 +9,6 @@ import {
   Platform,
   Image,
 } from 'react-native';
-// Lembre-se de ter instalado: npm i @react-native-community/datetimepicker
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 import { NavBar } from '../../components/navbar';
@@ -19,6 +18,7 @@ import { AppInputIcon } from '../../components/appInputIcon';
 import { DropdownSelector } from '../../components/dropdownSelector';
 
 import RobotAsset from '../../../assets/robot-icon.png';
+import { useNavigation } from '@react-navigation/native';
 
 const PURPLE_MEDIUM = '#8B459B';
 const PADDING_BOTTOM_TAB = 60;
@@ -29,8 +29,16 @@ const GROUP_OPTIONS = [
   'Grupo 3: Suporte',
 ];
 
+type ConfigurationScreenNavigationProp = {
+  navigate: (screen: string) => void;
+};
+
 export function ConfigurationScreen() {
-  const navigate = (screen: string) => console.log(`Navegando para: ${screen}`);
+  const navigation = useNavigation<ConfigurationScreenNavigationProp>();
+
+  const navigate = (screen: string) => {
+    navigation.navigate(screen);
+  };
 
   const [automationName, setAutomationName] = useState('');
   const [selectedGroups, setSelectedGroups] = useState<string[]>([]);
@@ -57,7 +65,7 @@ export function ConfigurationScreen() {
     console.log('Nome da Automação:', automationName);
     console.log('Grupos:', selectedGroups);
     console.log('Horário:', selectedTime.toLocaleTimeString());
-    navigate('FinalStep');
+    navigate('dashboard');
   };
 
   const formatTime = (date: Date) => {
