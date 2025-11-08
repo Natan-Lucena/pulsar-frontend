@@ -31,8 +31,9 @@ export function AutomationsScreen() {
   const navigate = (screen: string) => {
     navigation.navigate(screen);
   };
-  const goToDetails = (id: string) =>
-    console.log(`Abrindo detalhes da automação: ${id}`);
+  const goToDetails = () => {
+    navigate('automationDetailScreen');
+  };
   const goToCreateNew = () => {
     navigate('automationWizard');
   };
@@ -56,7 +57,7 @@ export function AutomationsScreen() {
             <AutomationCard
               key={automation.id}
               platform={automation.platform}
-              onPress={() => goToDetails(automation.id)}
+              onPress={() => goToDetails()}
             />
           ))}
         </View>
