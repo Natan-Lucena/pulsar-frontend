@@ -9,11 +9,21 @@ import {
 import { NavBar } from '../../components/navbar';
 import { BottomTabBar } from '../../components/bottomTabBar';
 import { DashboardGeneral } from '../../components/dashboardGeneral';
+import { useNavigation } from '@react-navigation/native';
 
 const WHITE = '#FFFFFF';
 const PURPLE_DARK = '#4F1D7B';
 
+type DashboardScreenNavigationProp = {
+  navigate: (screen: 'automationsScreen') => void;
+};
+
 export function DashboardScreen() {
+  const navigation = useNavigation<DashboardScreenNavigationProp>();
+  const navigate = () => {
+    navigation.navigate('automationsScreen');
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={PURPLE_DARK} />
@@ -27,7 +37,7 @@ export function DashboardScreen() {
         <DashboardGeneral name="Dados Slack" />
       </ScrollView>
 
-      <BottomTabBar activeScreen="home" />
+      <BottomTabBar activeScreen="home" onSettingsPress={navigate} />
     </View>
   );
 }
@@ -40,6 +50,6 @@ const styles = StyleSheet.create({
   scrollContent: {
     flexGrow: 1,
     alignItems: 'center',
-    paddingBottom: Platform.OS === 'ios' ? 80 : 60, // apenas o suficiente pra não colar no footer
+    paddingBottom: Platform.OS === 'ios' ? 80 : 60,
   },
 });

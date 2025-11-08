@@ -11,6 +11,7 @@ import { AutomationDescriptionScreen } from '../pages/automationDescription';
 import { CommunicationChannelsScreen } from '../pages/communicationChannels';
 import { ConfigurationScreen } from '../pages/configuration';
 import { DashboardScreen } from '../pages/dashboard';
+import { AutomationsScreen } from '../pages/automationScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -39,6 +40,7 @@ export function AppNavigator() {
         />
         <Stack.Screen name="configuration" component={ConfigurationScreen} />
         <Stack.Screen name="dashboard" component={DashboardScreen} />
+        <Stack.Screen name="automationsScreen" component={AutomationsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

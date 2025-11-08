@@ -1,3 +1,4 @@
+// src/components/BottomTabBar.tsx
 import React from 'react';
 import {
   View,
