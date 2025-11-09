@@ -15,19 +15,20 @@ const WHITE = '#FFFFFF';
 const PURPLE_DARK = '#4F1D7B';
 
 type DashboardScreenNavigationProp = {
-  navigate: (screen: 'automationsScreen') => void;
+  navigate: (screen: string) => void;
 };
 
 export function DashboardScreen() {
   const navigation = useNavigation<DashboardScreenNavigationProp>();
-  const navigate = () => {
-    navigation.navigate('automationsScreen');
+  const navigate = (value: string) => {
+    navigation.navigate(value);
   };
+  const handleOnSettingPress = () => navigate('automationsScreen');
 
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={PURPLE_DARK} />
-      <NavBar />
+      <NavBar onProfilePress={() => navigate('profile')} />
 
       <ScrollView
         contentContainerStyle={styles.scrollContent}
@@ -37,7 +38,10 @@ export function DashboardScreen() {
         <DashboardGeneral name="Dados Slack" />
       </ScrollView>
 
-      <BottomTabBar activeScreen="home" onSettingsPress={navigate} />
+      <BottomTabBar
+        activeScreen="home"
+        onSettingsPress={handleOnSettingPress}
+      />
     </View>
   );
 }

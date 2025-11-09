@@ -34,7 +34,7 @@ export function AutomationWizardScreen() {
     <View style={styles.container}>
       <NavBar
         onLogoPress={() => navigate('Home')}
-        onProfilePress={() => navigate('Profile')}
+        onProfilePress={() => navigate('profile')}
       />
       <ScrollView
         style={styles.content}

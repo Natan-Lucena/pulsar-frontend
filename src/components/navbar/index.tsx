@@ -6,9 +6,12 @@ import {
   Image,
   TouchableOpacity,
   Platform,
+  ImageSourcePropType,
 } from 'react-native';
+
 import LogoAsset from '../../../assets/logo-without-background.png';
 import ProfileAsset from '../../../assets/profile-icon.png';
+import BackAsset from '../../../assets/back-arrow-icon.png';
 
 const { width } = Dimensions.get('window');
 
@@ -20,34 +23,54 @@ const HEIGHT = 70;
 interface NavBarProps {
   onLogoPress?: () => void;
   onProfilePress?: () => void;
+  hideProfileIcon?: boolean;
+  profileIconSource?: ImageSourcePropType;
+
+  isBackButton?: boolean;
 }
 
-export function NavBar({ onLogoPress, onProfilePress }: NavBarProps) {
+export function NavBar({
+  onLogoPress,
+  onProfilePress,
+  hideProfileIcon = false,
+  profileIconSource,
+  isBackButton = false,
+}: NavBarProps) {
+  const leftIconSource = isBackButton ? BackAsset : LogoAsset;
+  const leftPressHandler = onLogoPress;
+
+  const rightIconSource = isBackButton
+    ? LogoAsset
+    : profileIconSource || ProfileAsset;
+  const rightPressHandler = isBackButton ? onProfilePress : onProfilePress;
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        onPress={onLogoPress}
+        onPress={leftPressHandler}
         activeOpacity={0.7}
         style={styles.logoButton}
       >
         <Image
-          source={LogoAsset}
+          source={leftIconSource}
           style={styles.logoIcon}
           resizeMode="contain"
         />
       </TouchableOpacity>
 
-      <TouchableOpacity
-        onPress={onProfilePress}
-        activeOpacity={0.7}
-        style={styles.profileButton}
-      >
-        <Image
-          source={ProfileAsset}
-          style={styles.profileIcon}
-          resizeMode="contain"
-        />
-      </TouchableOpacity>
+      {!hideProfileIcon && (
+        <TouchableOpacity
+          onPress={rightPressHandler}
+          activeOpacity={0.7}
+          style={styles.profileButton}
+        >
+          <Image
+            source={rightIconSource}
+            style={styles.profileIcon}
+            resizeMode="contain"
+          />
+        </TouchableOpacity>
+      )}
     </View>
   );
 }

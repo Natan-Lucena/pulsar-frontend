@@ -23,20 +23,20 @@ const PADDING_BOTTOM_TAB = 60;
 const TEXTAREA_HEIGHT = 250;
 
 type AutomationDescriptionScreenNavigationProp = {
-  navigate: (screen: 'configuration') => void;
+  navigate: (screen: string) => void;
 };
 
 export function AutomationDescriptionScreen() {
   const navigation = useNavigation<AutomationDescriptionScreenNavigationProp>();
-  const navigate = () => {
-    navigation.navigate('configuration');
+  const navigate = (value: string) => {
+    navigation.navigate(value);
   };
 
   return (
     <View style={styles.container}>
       <NavBar
-        onLogoPress={() => navigate()}
-        onProfilePress={() => navigate()}
+        onLogoPress={() => navigate('configuration')}
+        onProfilePress={() => navigate('profile')}
       />
       <ScrollView
         style={styles.content}
@@ -59,16 +59,16 @@ export function AutomationDescriptionScreen() {
         />
         <TouchableOpacity
           style={styles.nextButton}
-          onPress={() => navigate()}
+          onPress={() => navigate('configuration')}
           activeOpacity={0.8}
         >
           <Text style={styles.nextButtonText}>Próximo</Text>
         </TouchableOpacity>
       </ScrollView>
       <BottomTabBar
-        onHomePress={() => navigate()}
-        onSettingsPress={() => navigate()}
-        onUsersPress={() => navigate()}
+        onHomePress={() => navigate('configuration')}
+        onSettingsPress={() => navigate('configuration')}
+        onUsersPress={() => navigate('configuration')}
         activeScreen="settings"
       />
     </View>
