@@ -33,7 +33,7 @@ export function AutomationWizardScreen() {
   return (
     <View style={styles.container}>
       <NavBar
-        onLogoPress={() => navigate('Home')}
+        onLogoPress={() => navigate('dashboard')}
         onProfilePress={() => navigate('profile')}
       />
       <ScrollView
@@ -79,9 +79,9 @@ export function AutomationWizardScreen() {
         </TouchableOpacity>
       </ScrollView>
       <BottomTabBar
-        onHomePress={() => navigate('Home')}
-        onSettingsPress={() => navigate('Settings')}
-        onUsersPress={() => navigate('Users')}
+        onHomePress={() => navigate('dashboard')}
+        onSettingsPress={() => navigate('settings')}
+        onUsersPress={() => navigate('users')}
         activeScreen="settings"
       />
     </View>

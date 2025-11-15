@@ -41,7 +41,7 @@ export function AutomationsScreen() {
   return (
     <View style={styles.container}>
       <NavBar
-        onLogoPress={() => navigate('Home')}
+        onLogoPress={() => navigate('dashboard')}
         onProfilePress={() => navigate('profile')}
       />
 

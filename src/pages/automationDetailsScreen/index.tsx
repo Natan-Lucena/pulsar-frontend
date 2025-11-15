@@ -38,8 +38,8 @@ export function AutomationDetailScreen() {
   return (
     <View style={styles.container}>
       <NavBar
-        onLogoPress={() => navigate('Home')}
-        onProfilePress={() => navigate('Profile')}
+        onLogoPress={() => navigate('dashboard')}
+        onProfilePress={() => navigate('profile')}
       />
 
       <ScrollView
