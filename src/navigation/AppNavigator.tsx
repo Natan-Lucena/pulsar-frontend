@@ -15,6 +15,7 @@ import { AutomationsScreen } from '../pages/automationScreen';
 import { AutomationDetailScreen } from '../pages/automationDetailsScreen';
 import { ProfileScreen } from '../pages/profileScreen';
 import { SubscriptionScreen } from '../pages/subscriptonScreen';
+import { PlanSelectionScreen } from '../pages/planSelectionScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -50,6 +51,7 @@ export function AppNavigator() {
         />
         <Stack.Screen name="profile" component={ProfileScreen} />
         <Stack.Screen name="subscription" component={SubscriptionScreen} />
+        <Stack.Screen name="planSelection" component={PlanSelectionScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

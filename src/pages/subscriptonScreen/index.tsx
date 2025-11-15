@@ -48,7 +48,7 @@ export function SubscriptionScreen() {
           price={20.0}
           renewalDate="14 de dezembro de 2025"
           status="Ativa"
-          onPressChangePlan={() => console.log('Navegar para Mudar de Plano')}
+          onPressChangePlan={() => navigation.navigate('planSelection')}
         />
 
         <PaymentMethodCard
