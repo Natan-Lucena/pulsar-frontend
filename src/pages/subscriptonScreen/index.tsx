@@ -31,7 +31,7 @@ export function SubscriptionScreen() {
     <View style={styles.container}>
       <NavBar
         onLogoPress={() => navigation.navigate('profile')}
-        onProfilePress={() => navigation.navigate('profile')}
+        onProfilePress={() => navigation.navigate('dashboard')}
         isBackButton={true}
       />
 
