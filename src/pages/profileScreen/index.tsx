@@ -33,7 +33,9 @@ export function ProfileScreen() {
     navigation.navigate(screen);
   };
 
-  const handleManage = () => console.log('Gerenciar Assinatura');
+  const handleManage = () => {
+    navigate('subscription');
+  };
   const handleChangeCard = () => console.log('Alterar Cartão');
   const handleInvoicePress = (month: string) =>
     console.log(`Ver detalhes da fatura de ${month}`);

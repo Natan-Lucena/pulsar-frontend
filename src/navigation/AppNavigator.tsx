@@ -14,6 +14,7 @@ import { DashboardScreen } from '../pages/dashboard';
 import { AutomationsScreen } from '../pages/automationScreen';
 import { AutomationDetailScreen } from '../pages/automationDetailsScreen';
 import { ProfileScreen } from '../pages/profileScreen';
+import { SubscriptionScreen } from '../pages/subscriptonScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -48,6 +49,7 @@ export function AppNavigator() {
           component={AutomationDetailScreen}
         />
         <Stack.Screen name="profile" component={ProfileScreen} />
+        <Stack.Screen name="subscription" component={SubscriptionScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
