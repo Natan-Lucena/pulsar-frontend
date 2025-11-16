@@ -66,9 +66,9 @@ export function AutomationDescriptionScreen() {
         </TouchableOpacity>
       </ScrollView>
       <BottomTabBar
-        onHomePress={() => navigate('configuration')}
-        onSettingsPress={() => navigate('configuration')}
-        onUsersPress={() => navigate('configuration')}
+        onHomePress={() => navigation.navigate('dashboard')}
+        onSettingsPress={() => navigation.navigate('settings')}
+        onUsersPress={() => navigation.navigate('groupManagement')}
         activeScreen="settings"
       />
     </View>

@@ -23,7 +23,6 @@ export function DashboardScreen() {
   const navigate = (value: string) => {
     navigation.navigate(value);
   };
-  const handleOnSettingPress = () => navigate('automationsScreen');
 
   return (
     <View style={styles.container}>
@@ -40,7 +39,9 @@ export function DashboardScreen() {
 
       <BottomTabBar
         activeScreen="home"
-        onSettingsPress={handleOnSettingPress}
+        onHomePress={() => navigation.navigate('dashboard')}
+        onSettingsPress={() => navigation.navigate('settings')}
+        onUsersPress={() => navigation.navigate('groupManagement')}
       />
     </View>
   );

@@ -16,6 +16,8 @@ import { AutomationDetailScreen } from '../pages/automationDetailsScreen';
 import { ProfileScreen } from '../pages/profileScreen';
 import { SubscriptionScreen } from '../pages/subscriptonScreen';
 import { PlanSelectionScreen } from '../pages/planSelectionScreen';
+import { GroupManagementScreen } from '../pages/groupManagementScreen';
+import { GroupDetailScreen } from '../pages/groupDetailsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,7 +46,7 @@ export function AppNavigator() {
         />
         <Stack.Screen name="configuration" component={ConfigurationScreen} />
         <Stack.Screen name="dashboard" component={DashboardScreen} />
-        <Stack.Screen name="automationsScreen" component={AutomationsScreen} />
+        <Stack.Screen name="settings" component={AutomationsScreen} />
         <Stack.Screen
           name="automationDetailScreen"
           component={AutomationDetailScreen}
@@ -52,6 +54,11 @@ export function AppNavigator() {
         <Stack.Screen name="profile" component={ProfileScreen} />
         <Stack.Screen name="subscription" component={SubscriptionScreen} />
         <Stack.Screen name="planSelection" component={PlanSelectionScreen} />
+        <Stack.Screen
+          name="groupManagement"
+          component={GroupManagementScreen}
+        />
+        <Stack.Screen name="groupDetails" component={GroupDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

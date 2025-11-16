@@ -64,7 +64,7 @@ export function PlanSelectionScreen() {
       <BottomTabBar
         onHomePress={() => navigation.navigate('dashboard')}
         onSettingsPress={() => navigation.navigate('settings')}
-        onUsersPress={() => navigation.navigate('profile')}
+        onUsersPress={() => navigation.navigate('groupManagement')}
         activeScreen="settings"
       />
     </View>

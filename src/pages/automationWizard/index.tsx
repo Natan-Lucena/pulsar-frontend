@@ -79,9 +79,9 @@ export function AutomationWizardScreen() {
         </TouchableOpacity>
       </ScrollView>
       <BottomTabBar
-        onHomePress={() => navigate('dashboard')}
-        onSettingsPress={() => navigate('settings')}
-        onUsersPress={() => navigate('users')}
+        onHomePress={() => navigation.navigate('dashboard')}
+        onSettingsPress={() => navigation.navigate('settings')}
+        onUsersPress={() => navigation.navigate('groupManagement')}
         activeScreen="settings"
       />
     </View>

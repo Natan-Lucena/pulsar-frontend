@@ -99,9 +99,9 @@ export function AutomationDetailScreen() {
       </ScrollView>
 
       <BottomTabBar
-        onHomePress={() => navigate('dashboard')}
-        onSettingsPress={() => navigate('Settings')}
-        onUsersPress={() => navigate('Users')}
+        onHomePress={() => navigation.navigate('dashboard')}
+        onSettingsPress={() => navigation.navigate('settings')}
+        onUsersPress={() => navigation.navigate('groupManagement')}
         activeScreen="settings"
       />
     </View>

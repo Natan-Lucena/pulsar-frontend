@@ -88,9 +88,9 @@ export function ProfileScreen() {
       </ScrollView>
 
       <BottomTabBar
-        onHomePress={() => navigate('dashboard')}
-        onSettingsPress={() => navigate('settings')}
-        onUsersPress={() => navigate('users')}
+        onHomePress={() => navigation.navigate('dashboard')}
+        onSettingsPress={() => navigation.navigate('settings')}
+        onUsersPress={() => navigation.navigate('groupManagement')}
         activeScreen="users"
       />
     </View>
